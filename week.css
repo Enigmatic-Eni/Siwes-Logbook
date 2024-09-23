@@ -1,0 +1,120 @@
+/*  typography */
+body {
+    line-height: 1.7;
+    font-family: "Open Sans", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    color: #696c6d;
+    font-size: 14px;
+  }
+  h4, .h4 {
+    font-size: 22px;
+    color: #1c1d1f;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    background-color: #f0f0f0;
+}  
+h3{
+    color: black;
+    text-align: center;
+    font-weight: 900;
+}
+
+.table-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+/* Adjust column widths */
+th:first-child,
+td:first-child {
+    width: 30%;
+}
+
+th:last-child,
+td:last-child {
+    width: 70%;
+}
+
+.date-input, .report{
+    border: none;
+}
+.report{
+    width:100%;
+}
+
+button, .submit{
+    color: #696c6d;
+    background-color: none;
+    border-radius: 20px;
+    border: none;
+    margin: auto 50px;
+    margin-bottom: 20px;
+}
+button:hover{
+    color: white;
+    background-color: #1482f8;
+    border: none;
+}
+
+/* Hide the report section initially */
+#reportSection {
+    display: none;
+}
+
+/* Style for report display */
+#report {
+    margin-top: 20px;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#report th, #report td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+#report th {
+    background-color: #f2f2f2;
+}
+
+#fileupload{
+    color: #696c6d;
+    background-color: none;
+    border-radius: 20px;
+    border: 1px solid #1482f8;
+    margin: auto 50px;
+    margin-bottom: 20px;
+}
+#fileupload:hover{
+    color: white;
+    background-color: #1482f8;
+    border: none; 
+}

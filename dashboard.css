@@ -1,0 +1,23 @@
+ 
+h3{
+    color: black;
+    text-align: center;
+    font-weight: 900;
+}
+.weeks div  {
+    color:#696c6d ;
+    width: 100px;
+    height: 40px;
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    box-shadow: 10px 10px 10px rgba(84, 127, 245, 0.1);
+}
+.weeks div:hover{
+    background-color: #acacac ;
+}
+.weeks{
+    margin: 40px;
+    margin-left: 150px;
+}

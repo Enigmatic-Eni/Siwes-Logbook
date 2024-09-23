@@ -1,0 +1,26 @@
+.report-container{
+    width: 90%;
+    height: auto;
+    background-color: whitesmoke;
+    border: none;
+    box-shadow: 10px 10px 10px rgba(84, 127, 245, 0.1);
+    margin: 30px;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.fetch-report{
+    width: 100px;
+    height:auto;
+    margin-left: 10px;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+}
+
+.fetch-report:hover {
+    background-color: #0056b3;
+}
