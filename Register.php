@@ -151,7 +151,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" AND isset($_POST["student-reg"]) ) {
                 <div class=" flex items-center justify-end">
         
                     <div>
-                        <img src="./Lasu_logo.jpg" alt="" class=" pl-4 w-[25rem]">
+                        <img src="./images/Lasu_logo.jpg" alt="" class=" pl-4 w-[25rem]">
                     </div>
                     <div class=" formm flex flex-col bg-white shadow-lg w-[35rem] px-16 py-5 ml-auto justify-end">
                         <h1 class=" text-xl font-bold text-center pb-5">Create account</h1>
@@ -193,12 +193,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" AND isset($_POST["student-reg"]) ) {
                         : ''; ?>
                 </div>
         
-                <div class=" flex items-center justify-end">
+                <div class=" flex items-center ">
         
                     <div>
-                        <img src="./Lasu_logo.jpg" alt="" class=" pl-4 w-[25rem]">
+                        <img src="./images/Lasu_logo.jpg" alt="" class=" pl-4 w-[25rem]">
                     </div>
-                    <div class=" formm flex flex-col bg-white shadow-lg w-[35rem] px-16 py-5 ml-auto justify-end">
+                    <div class=" formm flex flex-col bg-white shadow-lg w-[35rem] py-12 h-[34.2rem] px-16  ml-auto justify-end">
                         <h1 class=" text-xl font-bold text-center pb-5">Create account</h1>
                         <form action="" method="post" class=" flex flex-col">
         

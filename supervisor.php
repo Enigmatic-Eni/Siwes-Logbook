@@ -38,23 +38,21 @@ if (isset($_GET['matric_no'])) {
    <!-- theme meta -->
    <meta name="theme-name" content="logbook" />
 
-   <!-- plugins -->
-   <link rel="preload" href="https://fonts.gstatic.com/s/opensans/v18/mem8YaGs126MiZpBA-UFWJ0bbck.woff2" style="font-display: optional;">
-   <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
-   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:600%7cOpen&#43;Sans&amp;display=swap" media="screen">
-
-   <link rel="stylesheet" href="plugins/themify-icons/themify-icons.css">
-   <link rel="stylesheet" href="plugins/slick/slick.css">
+ 
    <link rel="stylesheet" href="supervisor.css">
 
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+
    <!-- Main Stylesheet -->
-   <link rel="stylesheet" href="style.css">
+   <!-- <link rel="stylesheet" href="style.css"> -->
 
-   <!--Favicon-->
-   <link rel="shortcut icon" href="Lasu_logo.jpg" type="image/x-icon">
-   <link rel="icon" href="Lasu_logo.jpg" type="image/x-icon">
+ 
 
-   <style>
+   <!-- <style>
         .form-container {
             background: #fff;
             border-radius: 8px;
@@ -117,47 +115,45 @@ if (isset($_GET['matric_no'])) {
             margin: 0;
             color: #333;
         }
-   </style>
+   </style> -->
 </head>
 </head>
-<body>
-    <header class="sticky-top bg-white border-bottom border-default">
-    <div class="container">
+<body class=" font-google">
 
-        <nav class="navbar navbar-expand-lg navbar-white">
-            <a class="navbar-brand" href="">
-                <img class="lasu-logo" width="75px" height="75px" src="Lasu_logo.jpg" alt="LogBook">
-            </a> <h4>Student Industrial Work Experience Scheme Logbook</h4>
-            <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation">
-                <i class="ti-menu"></i>
-            </button>
-            <div class="nav-button">
-                <button onclick="location.href='index'">Home</button>
-                <button onclick="location.href='logout'">Logout</button>
-            </div>
 
-            </div>
-        </nav>
-    </div>
+    <header class=" bg-white py-6 items-center flex justify-between fixed w-screen shadow-lg">
+        <a href=""></a>
+        <p class="text-3xl font-semibold pb-3 items-center text-center text-black">E - Students Industrial Work Experience Logbook
+        </p>
+        <div class=" relative inline-block mr-7">
+            <img src="./images/person.png" alt="" class=" w-12 hover:cursor-pointer "
+                onclick="document.getElementById('dropdown').classList.toggle('hidden');">
+            <ul class=" absolute right-0 z-10 w-20 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden divide-y divide-gray-100"
+                id="dropdown">
+                <li><a href="" class=" block text-black px-4 py-2">Profile</a></li>
+                <li><a href="./logout" class=" block text-black px-4 py-2">Logout</a></li>
+            </ul>
+        </div>
     </header>
 
-    <div class="report-container">
-        <h4>
+    <div class=" pt-24">
+    <div class=" bg-slate-400 my-10 py-10 px-14 mx-8">
+        <h4 class=" font-bold text-lg pb-4">
             Check Student Report
         </h4>
-        <h6>Student matric number</h6>
-        <form action="" method="GET" >
-            <label for="matric_no">Matric No</label>
-            <input type="text" name="matric_no" id="matric_no" required minlength="8">
-            <button class="fetch-report" >Fetch Report</button>
+        <form action="" method="GET" class=" flex items-center">
+            <div class=" items-center">
+            <input type="text" name="matric_no" id="matric_no" required minlength="8" placeholder=" Enter Student Matric Number" class=" border-black border-2 py-2 rounded-md px-7 w-80 mb-4 mr-5">
+            <button class=" w-48 bg-gray-700 py-3 text-white ml-3 rounded-lg hover:bg-gray-400" >Fetch Report</button>
+            </div>
         </form>
 
         <div class="table-container">
     <?php
         if (isset($_GET['matric_no']) AND $result->num_rows > 0):
     ?>
-    <table id="myTable" border="2" style="border-collapse: collapse; width: 100%; font-family: Arial, sans-serif;margin-top:10px;">
-        <thead style="background-color: #f2f2f2; color: #333; font-weight: bold;">
+    <table id="myTable" border="2" style="border-collapse: collapse; width: 100%; margin-top:10px;" class=" border-black">
+        <thead style="background-color: #f2f2f2; color: #000; font-weight: bold;">
             <tr>
                 <th style="padding: 8px; border: 1px solid #ddd;">Week</th>
                 <th style="padding: 8px; border: 1px solid #ddd;">Monday</th>
@@ -167,7 +163,7 @@ if (isset($_GET['matric_no'])) {
                 <th style="padding: 8px; border: 1px solid #ddd;">Friday</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody class=" text-center">
             <?php
                 while ($row = $result->fetch_assoc()) {
                     echo "<tr>";
@@ -183,18 +179,18 @@ if (isset($_GET['matric_no'])) {
         </tbody>
     </table>
     <div class="form-container">
-        <h5>Submit a comment about this report</h5>
+        <h5 class=" mt-9 font-bold text-lg">Submit a comment about this report</h5>
         <form id="commentForm"
             action="comment.php"
             method="POST"
             style="margin-top: 10px;"
         >
             <input type="hidden" name="matric_no" value="<?php echo $matric_no; ?>">
-            <div>
-                <label for="week">Select Week</label>
-                <select name="week" id="week" style="width: 100%; padding: 5px;">
+            <div class=" flex mb-4">
+                <label for="week" class=" mr-4">Select Week</label>
+                <select name="week" id="week" style=" padding: 5px;" class=" w-36">
                     <?php 
-                        for ($i = 1; $i <= 12; $i++) {
+                        for ($i = 1; $i <= 18; $i++) {
                             echo "<option value='$i'>Week $i</option>";
                         }
                     ?>
@@ -209,6 +205,8 @@ if (isset($_GET['matric_no'])) {
         </form>
     </div>
     <?php endif; ?>
+</div>
+</div>
 </div>
 </body>
 </html>

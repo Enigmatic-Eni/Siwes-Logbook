@@ -7,7 +7,6 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="login.css"> -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -58,7 +57,7 @@ session_start();
         <div class=" flex items-center">
 
             <div>
-                <img src="./Lasu_logo.jpg" alt="" class=" pl-9 w-[25rem]">
+                <img src="./images/Lasu_logo.jpg" alt="" class=" pl-9 w-[25rem]">
             </div>
             <div class=" formm  iflex flex-col bg-white shadow-lg w-[35rem] h-[34.2rem] px-16  ml-auto justify-end">
                 <div>                
@@ -77,8 +76,8 @@ session_start();
                         <p>Forgot password?</p>
                     </a>
                     <button type="submit" id="login" name="student-login" class=" bg-purple-600 hover:bg-purple-500 py-4 rounded-lg text-white">Login</button>
-                    </div>
-
+                    
+                </div>
                 </form>
             </div>
         </div>
