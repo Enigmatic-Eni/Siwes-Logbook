@@ -179,7 +179,7 @@ if (isset($_GET['matric_no'])) {
         </tbody>
     </table>
     <div class="form-container">
-        <h5 class=" mt-9 font-bold text-lg">Submit a comment about this report</h5>
+        <h5 class=" mt-9 font-bold text-lg">Make a comment about this report</h5>
         <form id="commentForm"
             action="comment.php"
             method="POST"
@@ -188,7 +188,7 @@ if (isset($_GET['matric_no'])) {
             <input type="hidden" name="matric_no" value="<?php echo $matric_no; ?>">
             <div class=" flex mb-4">
                 <label for="week" class=" mr-4">Select Week</label>
-                <select name="week" id="week" style=" padding: 5px;" class=" w-36">
+                <select name="week" id="week" style=" padding: 5px;" class=" w-36 rounded-lg">
                     <?php 
                         for ($i = 1; $i <= 18; $i++) {
                             echo "<option value='$i'>Week $i</option>";
@@ -196,12 +196,12 @@ if (isset($_GET['matric_no'])) {
                     ?>
                 </select>
             </div>
-            <div>      
-                <label for="comment">Comment:</label>
-                <textarea id="comment" name="comment" rows="4" cols="50"></textarea>
+            <div class=" flex items-center">      
+                <label for="comment" class=" mr-7">Comment:</label>
+                <textarea id="comment" name="comment" rows="4" cols="40" class=" rounded-lg"></textarea>
             </div>
             <br>
-            <button id="s-btn">submit</button>
+            <button id="s-btn" class=" w-48 bg-gray-700 py-3 text-white ml-12 rounded-lg hover:bg-gray-400">Submit</button>
         </form>
     </div>
     <?php endif; ?>
