@@ -78,7 +78,7 @@ $row = $result->fetch_assoc();
                 onclick="document.getElementById('dropdown').classList.toggle('hidden');">
             <ul class=" absolute right-0 z-10 w-20 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden divide-y divide-gray-100"
                 id="dropdown">
-                <li><a href="" class=" block text-black px-4 py-2">Profile</a></li>
+                <li><a href="student_profile.php" class=" block text-black px-4 py-2">Profile</a></li>
                 <li><a href="./logout" class=" block text-black px-4 py-2">Logout</a></li>
             </ul>
         </div>

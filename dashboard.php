@@ -27,7 +27,7 @@ $matric_no = $_SESSION["matric_no"];
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
         <link rel="stylesheet" href="styles.css">
-        <!-- <link rel="stylesheet" href="dashboard.css"> -->
+    
  
 </head>
 
@@ -41,7 +41,7 @@ $matric_no = $_SESSION["matric_no"];
                 onclick="document.getElementById('dropdown').classList.toggle('hidden');">
             <ul class=" absolute right-0 z-10 w-20 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden divide-y divide-gray-100"
                 id="dropdown">
-                <li><a href="" class=" block text-black px-4 py-2">Profile</a></li>
+                <li><a href="student_profile.php" class=" block text-black px-4 py-2">Profile</a></li>
                 <li><a href="./logout" class=" block text-black px-4 py-2">Logout</a></li>
             </ul>
         </div>
