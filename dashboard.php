@@ -34,14 +34,15 @@ $matric_no = $_SESSION["matric_no"];
 <body class=" font-google">
     <header class=" bg-white py-6 items-center flex justify-between fixed w-screen shadow-lg">
         <a href=""></a>
-        <p class="text-3xl font-semibold pb-3 items-center text-center">E - Students Industrial Work Experience Logbook
+        <p class="text-3xl font-semibold pb-3 items-center text-center">E - Students Industrial Work Experience Logbook (Student)
         </p>
         <div class=" relative inline-block mr-7">
             <img src="./images/person.png" alt="" class=" w-12 hover:cursor-pointer "
                 onclick="document.getElementById('dropdown').classList.toggle('hidden');">
-            <ul class=" absolute right-0 z-10 w-20 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden divide-y divide-gray-100"
+            <ul class=" absolute right-0 z-10 w-[50rem] rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden divide-y divide-gray-100"
                 id="dropdown">
                 <li><a href="student_profile.php" class=" block text-black px-4 py-2">Profile</a></li>
+                <li><a href="./student_announcement.php" class=" block text-black px-4 py-2">View Announcements</a></li>
                 <li><a href="./logout" class=" block text-black px-4 py-2">Logout</a></li>
             </ul>
         </div>

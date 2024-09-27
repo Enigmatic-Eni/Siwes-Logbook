@@ -70,7 +70,7 @@ switch ($segments[0]) {
                onclick="document.getElementById('register-dropdown').classList.toggle('hidden');">
                Register <i class="fa-solid fa-caret-down pl-3"></i>
             </button>
-            <ul class="absolute right-0 z-10 w-[24rem] rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5  hidden"
+            <ul class="absolute right-0 z-10 w-[24rem] rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5  hidden divide-y divide-gray-100"
                id="register-dropdown">
                <li>
                   <a class="text-black block px-4 py-2 text-sm hover:bg-gray-100"
@@ -80,9 +80,10 @@ switch ($segments[0]) {
                   <a class="text-black block px-4 py-2 text-sm hover:bg-gray-100"
                      href="./register?type=supervisor">Supervisor</a>
                </li>
-               <!--<li>
-        <a class="text-black block px-4 py-2 text-sm hover:bg-gray-100" href="./register?type=supervisor">Supervisor</a>
-      </li>-->
+               <li>
+                  <a class="text-black block px-4 py-2 text-sm hover:bg-gray-100"
+                     href=" ">Admin</a>
+               </li>
             </ul>
          </div>
 
@@ -101,6 +102,10 @@ switch ($segments[0]) {
                <li>
                   <a class="text-black block px-4 py-2 text-sm hover:bg-gray-100"
                      href="./supervisor_login">Supervisor</a>
+               </li>
+               <li>
+                  <a class="text-black block px-4 py-2 text-sm hover:bg-gray-100"
+                     href="./admin_login ">Admin</a>
                </li>
             </ul>
          </div>

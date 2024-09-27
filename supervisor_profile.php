@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (!isset($_SESSION["pf_number"])) {
+if (!isset($_SESSION["reg_number"])) {
     // If user is not logged in, redirect to login page
     header("location: supervisor_login.php");
     exit();
@@ -9,12 +9,12 @@ if (!isset($_SESSION["pf_number"])) {
 include_once "conn.php";
 
 // Fetch supervisor details using matric number stored in session
-$pfnumber = $_SESSION["pf_number"];
-$stmt = $conn->prepare("SELECT first_name, last_name, middle_name, pf_number address FROM supervisors WHERE pf_number = ?");
-$stmt->bind_param("i", $pfnumber);
+$regnumber = $_SESSION["reg_number"];
+$stmt = $conn->prepare("SELECT first_name, last_name, middle_name, reg_number address FROM supervisors WHERE reg_number = ?");
+$stmt->bind_param("i", $regnumber);
 $stmt->execute();
 $stmt->store_result();
-$stmt->bind_result($first_name, $last_name, $middle_name, $pf_number);
+$stmt->bind_result($first_name, $last_name, $middle_name, $reg_number);
 $stmt->fetch();
 $stmt->close();
 $conn->close();
@@ -38,7 +38,7 @@ $conn->close();
 <body class="font-google">
 <header class=" bg-white py-6 items-center flex justify-between fixed w-screen shadow-lg">
         <a href=""></a>
-        <p class="text-3xl font-semibold pb-3 items-center text-center">E - Students Industrial Work Experience Logbook
+        <p class="text-3xl font-semibold pb-3 items-center text-center">E - Students Industrial Work Experience Logbook (Supervisor)
         </p>
         <div class=" relative inline-block mr-7">
             <img src="./images/person.png" alt="" class=" w-12 hover:cursor-pointer "
@@ -61,7 +61,7 @@ $conn->close();
                     <p class=" pb-3"><strong>First Name:</strong> <span class=" pl-4"> <?php echo $first_name; ?> </span></p>
                     <p class=" pb-3"><strong>Last Name:</strong> <span class=" pl-4"><?php echo $last_name; ?></span></p>
                     <p class=" pb-3"><strong>Middle Name:</strong> <span class=" pl-4"><?php echo !empty($middle_name) ? $middle_name : 'N/A'; ?></span></p>
-                    <p class=" pb-3"><strong>PF Number:</strong> <span class=" pl-4"><?php echo $pf_number; ?></span></p>
+                    <p class=" pb-3"><strong>Registration Number:</strong> <span class=" pl-4"><?php echo $reg_number; ?></span></p>
                   
                 </div>
 

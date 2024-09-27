@@ -76,7 +76,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" AND isset($_POST["student-reg"]) ) {
     $first_name = htmlspecialchars(trim($_POST["firstname"] ?? ''));
     $last_name = htmlspecialchars(trim($_POST["lastname"] ?? ''));
     $middle_name = htmlspecialchars(trim($_POST["middlename"] ?? ''));
-    $pf_no = isset($_POST["pf-number"]) ? (int) $_POST["pf-number"] : 0;
+    $reg_no = isset($_POST["reg-number"]) ? (int) $_POST["reg-number"] : 0;
     $password = $_POST["password"] ?? '';
 
     if (strlen($password) < 8) {
@@ -85,17 +85,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" AND isset($_POST["student-reg"]) ) {
     }
     $hashed_password = password_hash($password, PASSWORD_BCRYPT);
 
-    $stmt = $conn->prepare("SELECT COUNT(*) FROM supervisors WHERE pf_number = ?");
-    $stmt->bind_param("i", $pf_no);
+    $stmt = $conn->prepare("SELECT COUNT(*) FROM supervisors WHERE reg_number = ?");
+    $stmt->bind_param("i", $reg_no);
     $stmt->execute();
     $stmt->bind_result($count);
     $stmt->fetch();
     $stmt->close();
 
     if ($count == 0) {
-        $stmt = $conn->prepare("INSERT INTO supervisors (first_name, last_name, middle_name, pf_number, password_hash, user_type) VALUES (?, ?, ?, ?, ?, ?)");
+        $stmt = $conn->prepare("INSERT INTO supervisors (first_name, last_name, middle_name, reg_number, password_hash, user_type) VALUES (?, ?, ?, ?, ?, ?)");
         if ($stmt) {
-            $stmt->bind_param("sssisi", $first_name, $last_name, $middle_name, $pf_no, $hashed_password, $user_type);
+            $stmt->bind_param("sssisi", $first_name, $last_name, $middle_name, $reg_no, $hashed_password, $user_type);
             if ($stmt->execute()) {
                 echo "Registration successful!";
                 sleep(1);
@@ -110,12 +110,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" AND isset($_POST["student-reg"]) ) {
 
         $stmt->close();
     } else {
-        $supervisor_exists_err = "User with PF number <b> $pf_no </b> already exists.";
+        $supervisor_exists_err = "User with Registration number <b> $reg_no </b> already exists.";
     }
 
 
 }
-
 
 
 ?>
@@ -211,7 +210,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" AND isset($_POST["student-reg"]) ) {
                             <input type="text" id="middlename" name="middlename" placeholder="Middle Name (Optional)"
                                 class=" border-black border-2 py-2 rounded-md px-2 mb-4">
         
-                            <input type="number" id="pf-number" name="pf-number" placeholder="PF Number" required
+                            <input type="number" id="reg-number" name="reg-number" placeholder="Registration Number" required
                                 class=" border-black border-2 py-2 rounded-md px-2 mb-4">
         
                             <input type="password" id="password" name="password" placeholder="Password" required

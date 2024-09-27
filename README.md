@@ -1,1 +1,2 @@
-# Siwes-Lasu-Logbook
+# Siwes-Logbook
+How to get it started:

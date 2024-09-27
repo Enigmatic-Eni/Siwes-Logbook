@@ -56,7 +56,7 @@ INSERT INTO `comments` (`id`, `matric_number`, `week`, `comment`) VALUES
 CREATE TABLE `supervisors` (
   `first_name` varchar(50) NOT NULL,
   `last_name` varchar(50) NOT NULL,
-  `pf_number` int(20) NOT NULL,
+  `reg_number` int(20) NOT NULL,
   `password_hash` text NOT NULL,
   `middle_name` varchar(50) NOT NULL,
   `user_type` int(11) NOT NULL,
@@ -67,7 +67,7 @@ CREATE TABLE `supervisors` (
 -- Dumping data for table `supervisors`
 --
 
-INSERT INTO `supervisors` (`first_name`, `last_name`, `pf_number`, `password_hash`, `middle_name`, `user_type`, `id`) VALUES
+INSERT INTO `supervisors` (`first_name`, `last_name`, `reg_number`, `password_hash`, `middle_name`, `user_type`, `id`) VALUES
 ('OLUWASEGUN', 'LAWRENCE', 12341234, '$2y$10$j7w8W3Bl6oQNudJDlKc11OmTb6BM5i49cXolH3A6HM.cxaTG0rEZe', '', 2, 1);
 
 -- --------------------------------------------------------
